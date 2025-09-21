@@ -358,8 +358,7 @@ if __name__ == '__main__':
     load_models()
     print("✅ Models loaded successfully!")
     
-    # Use PORT environment variable for production deployment
+    # Use PORT environment variable for Render
     port = int(os.environ.get('PORT', 8080))
-    debug_mode = os.environ.get('FLASK_ENV', 'development') != 'production'
     
-    app.run(host='0.0.0.0', port=port, debug=debug_mode)
+    app.run(host='0.0.0.0', port=port, debug=False)
